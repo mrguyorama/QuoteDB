@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(18, 97, 166);
+}
+
+.center{
+    text-align: center;
+}
+
+.quote{
+    background-color: rgb(252, 177, 0);
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    border-bottom-color: #000;
+    border-bottom-style: solid;
+    border-bottom-width: medium;
+    border-top-color: #000;
+    border-top-width: medium;
+    border-top-style: solid;
+}
+
+.quotenum{
+    font-size: larger;
+}

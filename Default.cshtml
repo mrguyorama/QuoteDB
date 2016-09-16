@@ -1,0 +1,28 @@
+﻿@{
+    var db = Database.Open("QuoteDB"); 
+    var selectQueryString = "SELECT TOP 100 * FROM QUOTES WHERE VISIBILITY = 'Y'"; 
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="~/Home.css">
+        <title>Pioneer Quotes</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    </head>
+    <body>
+        <h1 class="center">QUOTES</h1>
+        <a href="~/NewQuote.cshtml"><p class="center" style="background-color: #fcb100">Add Your Own Quote!</p></a>
+        <br>
+        <br>
+        @foreach(var row in db.Query(selectQueryString)){
+            <div class="quote"><p class="quotenum">#@row.QUOTE_ID</p>
+                <p class="quotetext">@row.QUOTE</p>
+                <p class="speaker">----@row.SPEAKER</p>
+            
+            </div>
+        }
+    </body>
+</html>

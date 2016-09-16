@@ -1,0 +1,28 @@
+﻿@{
+    var db = Database.Open("QuoteDB");
+    string quotetext = Request["Quote"];
+    string speaker = Request["Speaker"];
+    if(speaker.Equals("") || speaker.Equals("Admin")){
+        speaker = "Anonymous";
+    }
+    string ip = Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? Request.ServerVariables["REMOTE_ADDR"];
+
+    string sql = "INSERT INTO QUOTES (QUOTE, SPEAKER, VISIBILITY, IP_ADDRESS) VALUES ('" + quotetext + "', '" + speaker + "', 'Y', '" + ip + "')";
+
+    db.Query(sql);
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="~/Home.css">
+        <title></title>
+    </head>
+    <body>
+        Submitted!
+        <br>
+        <a href="~/Default.cshtml">Back to home</a>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+﻿@{
+    
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="~/Home.css">
+        <title>Submit Quote</title>
+    </head>
+    <body>
+        <form method="post" action="~/quotesubmit.cshtml">
+            Quote:<br>
+            <textarea rows="10" cols="60" name="Quote"></textarea>
+            <br>
+            Speaker:<br>
+            <input type="text" size="40" name="Speaker">
+            <br><br>
+            <input type="submit" value="Post!">
+        
+        </form>
+    </body>
+</html>
